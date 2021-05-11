@@ -1,3 +1,11 @@
-FROM alpine:3.12
+FROM python:3.8-alpine
 
-RUN apt-get update -y && apt-get install -y python3-pip python-dev
+ENV T1 1
+
+WORKDIR /Calculadora
+
+ADD . /Calculadora
+
+RUN  python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt
+
+ENTRYPOINT ["./Calculator.py"]
