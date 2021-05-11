@@ -1,4 +1,14 @@
+#!/usr/bin/python3
+
 import sys
-a, b = sys.argv[1:3]
-summ = int(a) + int(b)
-print ("sum is", summ)
+
+
+
+try:  
+ ans = eval(''.join(sys.argv[1:]))
+ print(''.join(sys.argv[1:])+" = ")
+ print(ans)
+except:
+  print('Please input correct syntax. For example: \'1+2*3\'')
+
+
